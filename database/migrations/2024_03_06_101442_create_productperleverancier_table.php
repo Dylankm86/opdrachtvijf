@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id(); 
             $table->unsignedBigInteger('leverancier_id'); 
             $table->foreign('leverancier_id')->references('id')->on('leveranciers'); 
-            $table->unsignedBigInteger('product_id'); +
+            $table->unsignedBigInteger('product_id'); 
             $table->foreign('product_id')->references('id')->on('products'); 
             $table->date('DatumLevering'); 
             $table->integer('Aantal'); 
