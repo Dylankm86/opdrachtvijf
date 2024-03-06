@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('magazijn', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('product_id')->nullable();
+            $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products'); 
             $table->decimal('VerpakkingsEenheid', 8, 2); 
             $table->integer('AantalAanwezig')->nullable(); 
