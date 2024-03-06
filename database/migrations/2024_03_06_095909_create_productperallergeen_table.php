@@ -12,7 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('productperallergeen', function (Blueprint $table) {
-            $table->id();
+            $table->id(); // Creates the Id (PK)
+            $table->unsignedBigInteger('product_id'); // Creates the ProductId (FK)
+            $table->foreign('product_id')->references('id')->on('products'); // Specifies that ProductId is a FK
+            $table->unsignedBigInteger('allergeen_id'); // Creates the AllergeenId (FK)
+            $table->foreign('allergeen_id')->references('id')->on('allergenen'); // Specifies that AllergeenId is a FK
             $table->timestamps();
         });
     }
