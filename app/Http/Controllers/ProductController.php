@@ -20,6 +20,6 @@ class ProductController extends Controller
             ->select('product.Barcode', 'product.Naam', 'magazijn.VerpakkingsEenheid', 'magazijn.AantalAanwezig', 'leverancier.Naam as LeverancierNaam')
             ->get();
 
-        return view('products.index', ['products' => $products]);
+        return view('dashboard', ['products' => $products]);
     }
 }
