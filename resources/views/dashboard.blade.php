@@ -1,27 +1,64 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+    .dashboard-table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+        margin-bottom: 1rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.5rem;
+        overflow: hidden;
+    }
+
+    .dashboard-table thead {
+        background-color: #f8fafc;
+        border-bottom: 2px solid #e2e8f0;
+    }
+
+    .dashboard-table th,
+    .dashboard-table td {
+        padding: 1rem;
+        text-align: left;
+        font-weight: 600;
+        color: #4a5568;
+    }
+
+    .dashboard-table tbody tr:nth-child(even) {
+        background-color: #edf2f7;
+    }
+
+    .dashboard-table tbody tr:hover {
+        background-color: #e2e8f0;
+    }
+
+    @media (max-width: 640px) {
+        .dashboard-table {
+            overflow-x: auto;
+        }
+    }
+</style>
 <h1 class="text-2xl font-bold mb-4">Dashboard</h1>
 
-
-<table class="min-w-full divide-y divide-gray-200">
-    <thead class="bg-gray-50">
+<table class="dashboard-table">
+    <thead>
         <tr>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Barcode</th>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Naam</th>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">VerpakkingsEenheid</th>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">AantalAanwezig</th>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">LeverancierNaam</th>
+            <th>Barcode</th>
+            <th>Naam</th>
+            <th>VerpakkingsEenheid</th>
+            <th>AantalAanwezig</th>
+            <th>LeverancierNaam</th>
         </tr>
     </thead>
-    <tbody class="bg-white divide-y divide-gray-200">
+    <tbody>
         @foreach ($products as $product)
         <tr>
-            <td class="px-6 py-4 whitespace-nowrap">{{ $product->Barcode }}</td>
-            <td class="px-6 py-4 whitespace-nowrap">{{ $product->Naam }}</td>
-            <td class="px-6 py-4 whitespace-nowrap">{{ $product->VerpakkingsEenheid }}</td>
-            <td class="px-6 py-4 whitespace-nowrap">{{ $product->AantalAanwezig }}</td>
-            <td class="px-6 py-4 whitespace-nowrap">{{ $product->LeverancierNaam }}</td>
+            <td>{{ $product->Barcode }}</td>
+            <td>{{ $product->Naam }}</td>
+            <td>{{ $product->VerpakkingsEenheid }}</td>
+            <td>{{ $product->AantalAanwezig }}</td>
+            <td>{{ $product->LeverancierNaam }}</td>
         </tr>
         @endforeach
     </tbody>
