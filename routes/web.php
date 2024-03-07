@@ -31,3 +31,4 @@ Route::middleware('auth')->group(function () {
 require __DIR__ . '/auth.php';
 
 Route::get('/products', [App\Http\Controllers\ProductController::class, 'index']);
+Route::get('/products', [App\Http\Controllers\ProductController::class, 'index'])->name('products');

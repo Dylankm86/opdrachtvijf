@@ -11,7 +11,14 @@
                 <div class="p-6 text-gray-900">
                     {{ __("You're logged in!") }}
                 </div>
+                <div class="p-6">
+                    <a href="{{ route('products') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Go to Products
+                    </a>
+                </div>
             </div>
         </div>
     </div>
+
+
 </x-app-layout>
