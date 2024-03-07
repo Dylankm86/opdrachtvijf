@@ -13,6 +13,6 @@ class ProductController extends Controller
 {
     public function index()
     {
-        return "hello this is the controller";
+        return view('dashboard');
     }
 }

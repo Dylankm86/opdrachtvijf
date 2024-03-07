@@ -16,8 +16,6 @@
     </div>
 
     <div class="container">
-        @foreach ($products as $product)
-        <p>{{ $product->Naam }}</p>
-        @endforeach
+        <p>This is the dashboard view.</p>
     </div>
 </x-app-layout>
