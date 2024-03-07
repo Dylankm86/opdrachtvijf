@@ -15,8 +15,8 @@ class ProductController extends Controller
     {
         $products = DB::table('magazijn')
             ->join('product', 'magazijn.Product_id', '=', 'product.id')
-            ->join('productperleverancier', 'product.id', '=', 'productperleverancier.ProductId')
-            ->join('leverancier', 'productper_leverancier.LeverancierId', '=', 'leverancier.id')
+            ->join('productperleverancier', 'product.id', '=', 'productperleverancier.product_id')
+            ->join('leverancier', 'productperleverancier.leverancier_id', '=', 'leverancier.id')
             ->select('product.Barcode', 'product.Naam', 'magazijn.VerpakkingsEenheid', 'magazijn.AantalAanwezig', 'leverancier.Naam as LeverancierNaam')
             ->get();
 
