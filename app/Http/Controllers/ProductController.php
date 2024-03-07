@@ -13,15 +13,6 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = DB::table('magazijn')
-            ->join('product', 'magazijn.Product_id', '=', 'product.id')
-            ->join('productperleverancier', 'product.id', '=', 'productperleverancier.product_id')
-            ->join('leverancier', 'productperleverancier.leverancier_id', '=', 'leverancier.id')
-            ->select('product.Barcode', 'product.Naam', 'magazijn.VerpakkingsEenheid', 'magazijn.AantalAanwezig', 'leverancier.Naam as LeverancierNaam')
-            ->get();
-
-
-
-        return view('dashboard', ['products' => $products]);
+        return "hello this is the controller";
     }
 }
