@@ -20,7 +20,6 @@
                 <td>{{ $product->Naam }}</td>
                 <td>{{ $product->VerpakkingsEenheid }}</td>
                 <td>{{ $product->AantalAanwezig }}</td>
-
                 <td>{{ $product->LeverancierNaam }}</td>
             </tr>
             @endforeach
