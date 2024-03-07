@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Leverancier extends Model
 {
     use HasFactory;
+
+    protected $table = 'leverancier';
+
+    public $timestamps = false;
+
+    protected $fillable = ['Naam'];
 }
