@@ -22,6 +22,6 @@ class ProductController extends Controller
 
 
 
-        return view('test', ['products' => $products]);
+        return view('dashboard', ['products' => $products]);
     }
 }
