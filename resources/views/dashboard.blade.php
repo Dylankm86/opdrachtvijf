@@ -15,7 +15,6 @@
         </div>
     </div>
 
-    @extends('layouts.app')
 
     @section('content')
     <div class="container">
@@ -37,7 +36,7 @@
                     <td>{{ $product->Naam }}</td>
                     <td>{{ $product->VerpakkingsEenheid }}</td>
                     <td>{{ $product->AantalAanwezig }}</td>
-                    <td>{{ $product->Allergeen }}</td>
+
                     <td>{{ $product->LeverancierNaam }}</td>
                 </tr>
                 @endforeach
