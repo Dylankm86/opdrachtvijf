@@ -15,8 +15,6 @@
         </div>
     </div>
 
-
-    @section('content')
     <div class="container">
         <table class="table">
             <thead>
@@ -36,14 +34,10 @@
                     <td>{{ $product->Naam }}</td>
                     <td>{{ $product->VerpakkingsEenheid }}</td>
                     <td>{{ $product->AantalAanwezig }}</td>
-
                     <td>{{ $product->LeverancierNaam }}</td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
-    @endsection
-
-
 </x-app-layout>
