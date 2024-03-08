@@ -63,6 +63,13 @@
             overflow-x: auto;
         }
     }
+
+    h1 {
+        text-align: center;
+        font-size: 2rem;
+        color: #4a5568;
+        margin-top: 2rem;
+    }
 </style>
 <h1 class="text-2xl font-bold mb-4">Dashboard</h1>
 

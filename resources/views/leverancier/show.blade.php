@@ -67,12 +67,20 @@
                 overflow-x: auto;
             }
         }
+
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            color: #4a5568;
+            margin-top: 2rem;
+        }
     </style>
 </head>
 
 <body>
 
     <div class="container">
+        <a href="{{ route('dashboard') }}" class="back-button">Go to Dashboard</a>
         <h1>{{ $leverancier->Naam }}</h1>
         <table class="dashboard-table">
             <thead>
