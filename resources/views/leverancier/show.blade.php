@@ -72,7 +72,19 @@
             text-align: center;
             font-size: 2rem;
             color: #4a5568;
-            margin-top: 2rem;
+        }
+
+        .back-button {
+            display: inline-block;
+            background-color: #4a5568;
+            color: #ffffff;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 0.25rem;
+        }
+
+        .back-button:hover {
+            background-color: #2d3748;
         }
     </style>
 </head>
@@ -80,7 +92,7 @@
 <body>
 
     <div class="container">
-        <a href="{{ route('dashboard') }}" class="back-button">Go to Dashboard</a>
+        <a href="{{ route('dashboard') }}" class="back-button">Terug naar het Dashboard</a>
         <h1>{{ $leverancier->Naam }}</h1>
         <table class="dashboard-table">
             <thead>
