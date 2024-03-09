@@ -4,25 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Allergeen Details</title>
+    <title>Document</title>
 </head>
 
 <body>
-    <h1>{{ $allergeen->Naam }}</h1>
-    <p>{{ $allergeen->Omschrijving }}</p>
+    <h1>Allergens for {{ $product->Naam }}</h1>
 
-    <h2>Associated Products</h2>
-    @if($products->isEmpty())
-    <p>No associated products found.</p>
-    @else
-    <ul>
-        @foreach($products as $product)
-        <li>{{ $product->Naam }}</li>
-        @endforeach
-    </ul>
-    @endif
-
-    <a href="{{ route('dashboard') }}">Back to Dashboard</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Allergen Name</th>
+                <!-- Add more columns if needed -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($allergens as $allergen)
+            <tr>
+                <td>{{ $allergen->name }}</td>
+                <!-- Add more cells if needed -->
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
 </body>
 
 </html>
