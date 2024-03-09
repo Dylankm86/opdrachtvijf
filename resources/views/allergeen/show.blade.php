@@ -9,6 +9,7 @@
 
 <body>
     <h1>{{ $allergeen->Naam }}</h1>
+    <p>{{ $allergeen->Omschrijving }}</p>
 
     <h2>Associated Products</h2>
     @if($products->isEmpty())
