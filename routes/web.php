@@ -32,4 +32,4 @@ require __DIR__ . '/auth.php';
 
 Route::get('/dashboard', [App\Http\Controllers\ProductController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/leverancier/{name}', 'App\Http\Controllers\LeverancierController@show')->name('leverancier.show');
-Route::get('/product/{id}/allergens', [App\Http\Controllers\ProductController::class, 'showAllergens'])->name('product.allergens');
+Route::get('/product/{name}/allergens', 'App\Http\Controllers\AllergeenController@showAllergens')->name('product.allergens');
