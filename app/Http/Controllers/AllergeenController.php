@@ -19,10 +19,9 @@ class AllergeenController extends Controller
 
         $products = DB::table('productperallergeen')
             ->join('product', 'productperallergeen.product_id', '=', 'product.id')
-            ->where('allergeen_id', $allergeen->id)
-            ->select('product.Naam', 'productperallergeen.*')
+            ->select('product.id as product_id', 'product.Naam', 'product.Barcode', 'product.VerpakkingsEenheid', 'product.AantalAanwezig', 'product.LeverancierNaam')
+            ->where('productperallergeen.allergeen_id', $allergeen->id)
             ->get();
-
         return view('allergeen.show', ['allergeen' => $allergeen, 'products' => $products]);
     }
 }

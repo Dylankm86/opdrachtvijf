@@ -84,6 +84,9 @@
         </tr>
     </thead>
     <tbody>
+        @php
+        dd($products->first());
+        @endphp
         @foreach ($products as $product)
         <tr>
             <td>{{ $product->Barcode }}</td>
@@ -91,7 +94,7 @@
             <td>{{ $product->VerpakkingsEenheid }}</td>
             <td>{{ $product->AantalAanwezig }}</td>
             <td><a href="{{ route('leverancier.show', $product->LeverancierNaam) }}">{{ $product->LeverancierNaam }}</a></td>
-            <td><a href="{{route('allergeen.show', ['id' => $product->id]) }}">info</a></td>
+            <td><a href="{{route('allergeen.show', ['id' => $product->product_id]) }}">info</a></td>
         </tr>
         @endforeach
     </tbody>
