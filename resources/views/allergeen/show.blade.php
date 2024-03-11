@@ -1,30 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- ... -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 
 <body>
-    <div class="container">
-        <a href="{{ route('dashboard') }}" class="back-button">Back to Dashboard</a>
-        <h1>{{ $product->Naam }}</h1>
-        <table class="dashboard-table">
-            <thead>
-                <tr>
-                    <th>Allergen Name</th>
-                    <th>Description</th>
-                    <!-- Add other columns as needed -->
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($allergens as $allergeen)
-                <tr>
-                    <td>{{ $allergeen->Naam }}</td>
-                    <td>{{ $allergeen->Omschrijving }}</td>
-                    <!-- Add other columns as needed -->
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
+    <h1>Allergeen</h1>
+
+    <ul>
+        @foreach ($allergeen as $item)
+        <li>{{ $item->Naam }}</li>
+        @endforeach
+    </ul>
 </body>
 
 </html>

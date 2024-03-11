@@ -14,4 +14,8 @@ class Product extends Model
     public $timestamps = false;
 
     protected $fillable = ['Barcode', 'Naam', 'Allergeen'];
+    public function products()
+    {
+        return $this->belongsToMany('App\Models\Product', 'productperallergeen', 'allergeen_id', 'product_id');
+    }
 }
