@@ -7,22 +7,19 @@ use Illuminate\Support\Facades\DB;
 
 class AllergeenController extends Controller
 {
-    public function showAllergens($name)
+    public function show($name)
     {
-        $product = DB::table('product')
+        $allergeen = DB::table('allergeen')
             ->where('Naam', $name)
             ->first();
 
-        if ($product === null) {
-            return redirect()->back()->with('error', 'Product not found');
-        }
-
-        $allergens = DB::table('productperallergeen')
+        $product = DB::table('product')
+            ->join('productperallergeen', 'product.id', '=', 'productperallergeen.product_id')
             ->join('allergeen', 'productperallergeen.allergeen_id', '=', 'allergeen.id')
-            ->where('product_id', $product->id)
-            ->select('allergeen.Naam', 'allergeen.Omschrijving', 'productperallergeen.*')
+            ->where('product.Naam', $name)
+            ->select('product.*', 'allergeen.Naam as allergeen_naam', 'allergeen.Omschrijving as allergeen_omschrijving')
             ->get();
 
-        return view('allergeen.show', ['product' => $product, 'allergens' => $allergens]);
+        return view('allergeen.show', ['product' => $product, 'allergeen' => $allergeen]);
     }
 }
