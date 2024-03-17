@@ -92,7 +92,7 @@
             <td>{{ $product->VerpakkingsEenheid }}</td>
             <td>{{ $product->AantalAanwezig }}</td>
             <td><a href="{{ route('leverancier.show', $product->LeverancierNaam) }}">{{ $product->LeverancierNaam }}</a></td>
-            <a href="{{ url('/allergeen') }}" class="btn btn-primary">Go to Allergeen</a>
+            <td><a href="{{ route('allergeen.show', $product->Naam) }}">meer info</a></td>
         </tr>
         @endforeach
     </tbody>

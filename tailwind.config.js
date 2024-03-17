@@ -19,7 +19,7 @@ module.exports = {
     plugins: [forms],
 
     purge: [],
-    darkMode: false, // or 'media' or 'class'
+    darkMode: false,
     theme: {
       extend: {},
     },
