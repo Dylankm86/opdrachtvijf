@@ -71,7 +71,7 @@
         margin-top: 2rem;
     }
 </style>
-<h1 class="text-2xl font-bold mb-4">Dashboard</h1>
+<h1 class="text-2xl font-bold mb-4">Magazijn</h1>
 
 <table class="dashboard-table">
     <thead>
